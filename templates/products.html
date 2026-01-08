@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The X-Factor | Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- NAVBAR (UNCHANGED STRUCTURE) -->
+<nav>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="The X-Factor Logo">
+    </div>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('products') }}" class="active">Products</a></li>
+        <li><a href="{{ url_for('tips') }}">Tips</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        <li><a href="{{ url_for('cart') }}">Cart (<span id="cart-count">0</span>)</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section id="products-hero" class="products-hero fade-in">
+    <h1>Fuel Your Potential</h1>
+    <p>Premium supplements & gym essentials — affordable, trusted, UAE-focused.</p>
+</section>
+
+<!-- FILTER BAR (USES EXISTING JS) -->
+<section class="filter-bar fade-in">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Supplements</button>
+    <button class="filter-btn">Apparel</button>
+    <button class="filter-btn">Accessories</button>
+</section>
+
+<!-- PRODUCTS GRID -->
+<section class="products-container">
+
+    <!-- PRODUCT -->
+    <div class="product-card fade-in" data-category="supplements">
+        <span class="badge sale">SALE</span>
+
+        <div class="product-image">
+            <img src="https://www.hollandandbarrett.ae/media/catalog/product/8/0/80181_3.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=600&width=600&canvas=600:600" alt="Protein Powder">
+        </div>
+
+        <div class="product-info">
+            <h3>Whey Protein Powder</h3>
+            <p class="product-desc">
+                High-quality whey protein for muscle recovery and growth.
+            </p>
+
+            <div class="price-row">
+                <span class="old-price">AED 220</span>
+                <span class="price">AED 179</span>
+            </div>
+
+            <button class="add-cart-btn" data-product="Whey Protein Powder" data-price="179">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- PRODUCT -->
+    <div class="product-card fade-in" data-category="supplements">
+        <span class="badge popular">POPULAR</span>
+
+        <div class="product-image">
+            <img src="https://www.sporter.com/media/catalog/product/1/0/100214-new.jpg" alt="Creatine Monohydrate">
+        </div>
+
+        <div class="product-info">
+            <h3>Creatine Monohydrate</h3>
+            <p class="product-desc">
+                Boost strength, endurance, and workout performance.
+            </p>
+
+            <div class="price-row">
+                <span class="price">AED 129</span>
+            </div>
+
+            <button class="add-cart-btn" data-product="Creatine Monohydrate" data-price="129">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- PRODUCT -->
+    <div class="product-card fade-in" data-category="apparel">
+        <div class="product-image">
+            <img src="https://allamericanroughneck.com/cdn/shop/products/GYM-FIT-RELEASE-2-23-23_0116_DSC04532_1200x.jpg" alt="Gym Shirt">
+        </div>
+
+        <div class="product-info">
+            <h3>Loose-Fit Gym Shirt</h3>
+            <p class="product-desc">
+                Breathable, lightweight, and designed for intense workouts.
+            </p>
+
+            <div class="price-row">
+                <span class="price">AED 89</span>
+            </div>
+
+            <button class="add-cart-btn" data-product="Loose-Fit Gym Shirt" data-price="89">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- PRODUCT -->
+    <div class="product-card fade-in" data-category="accessories">
+        <div class="product-image">
+            <img src="https://life-cdn.lifepharmacy.com/images/products/129745-natures_aid_vitamin_c_1000_mg_time_release_tablets_30_s_1-1024x1024.jpg" alt="Vitamin C Tablets">
+        </div>
+
+        <div class="product-info">
+            <h3>Vitamin C Tablets</h3>
+            <p class="product-desc">
+                Daily immune support for long-term wellness.
+            </p>
+
+            <div class="price-row">
+                <span class="price">AED 59</span>
+            </div>
+
+            <button class="add-cart-btn" data-product="Vitamin C Tablets" data-price="59">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+
+</section>
+
+<!-- CART DRAWER -->
+<div id="cart-drawer">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <span id="close-cart">×</span>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-footer">
+        <p>Total Items: <span id="cart-total">0</span></p>
+        <button id="checkout-btn">Checkout (Demo)</button>
+    </div>
+</div>
+<div id="cart-overlay"></div>
+
+<footer>
+    <p>&copy; 2026 The X-Factor | UAE</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The X-Factor | Tips</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Page-specific styles for tips.html */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .blog-card {
+            background: var(--card);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .blog-card p {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-card button,
+        .blog-card .btn {
+            padding: 0.8rem 1.6rem;
+            background: linear-gradient(135deg, var(--red), #ff2a2a);
+            border: none;
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .blog-card button:hover,
+        .blog-card .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--red-soft);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="The X-Factor Logo">
+        </div>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('products') }}">Products</a></li>
+            <li><a href="{{ url_for('tips') }}" class="active">Tips</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('cart') }}">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+    </nav>
+
+    <section id="tips-hero" class="fade-in">
+        <h1>Health & Lifestyle Tips</h1>
+        <p>Learn how to improve your nutrition and fitness with practical tips.</p>
+    </section>
+
+    <section id="blog" class="fade-in tips-grid">
+        <div class="blog-card">
+            <h3>5 Tips for Better Nutrition</h3>
+            <p>Eating healthy doesn’t have to be hard...</p>
+            <a href="{{ url_for('nutrition_tips') }}" class="btn">Read More</a>
+        </div>
+
+        <div class="blog-card">
+            <h3>How to Start a Gym Routine</h3>
+            <p>Starting at the gym can be intimidating...</p>
+            <a href="{{ url_for('gym_routine_tips') }}" class="btn">Read More</a>
+        </div>
+
+        <div class="blog-card">
+            <h3>Staying Consistent with Workouts</h3>
+            <p>Consistency is key to achieving your fitness goals...</p>
+            <a href="{{ url_for('workout_consistency_tips') }}" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- CART DRAWER -->
+    <div id="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <span id="close-cart">×</span>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <p>Total Items: <span id="cart-total">0</span></p>
+            <button id="checkout-btn">Checkout (Demo)</button>
+        </div>
+    </div>
+    <div id="cart-overlay"></div>
+
+    <footer>
+        <p>&copy; 2026 The X-Factor | UAE</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        function toggleReadMore(button) {
+            const post = button.parentElement;
+            const fullText = post.querySelector('.full-text');
+            if (fullText.style.display === 'none') {
+                fullText.style.display = 'block';
+                button.innerText = 'Read Less';
+            } else {
+                fullText.style.display = 'none';
+                button.innerText = 'Read More';
+            }
+        }
+    </script>
+</body>
+</html>

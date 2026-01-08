@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The X-Factor | About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="The X-Factor Logo">
+        </div>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+            <li><a href="{{ url_for('products') }}">Products</a></li>
+            <li><a href="{{ url_for('tips') }}">Tips</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('cart') }}">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about-hero" class="fade-in">
+        <h1>About The X-Factor</h1>
+        <p>We are a UAE-based health, nutrition, and lifestyle brand dedicated to improving your quality of life. Our mission is to reduce lifestyle diseases through affordable supplements, fitness apparel, and health education.</p>
+    </section>
+
+    <section id="mission" class="fade-in about-grid">
+        <div class="about-card">
+            <h3>Our Mission</h3>
+            <p>Promote good health and well-being (SDG 3).</p>
+        </div>
+
+        <div class="about-card">
+            <h3>Partnerships</h3>
+            <p>Partner with local gyms, schools, and social media influencers (SDG 17).</p>
+        </div>
+
+        <div class="about-card">
+            <h3>Community Education</h3>
+            <p>Educate the community about nutrition and lifestyle diseases.</p>
+        </div>
+
+        <div class="about-card">
+            <h3>Affordable Products</h3>
+            <p>Provide affordable and high-quality products for everyone.</p>
+        </div>
+    </section>
+
+    <section id="impact" class="fade-in">
+        <h2>Our Impact</h2>
+        <p>Through education, accessible products, and a focus on community wellness, The X-Factor empowers UAE residents to make healthier lifestyle choices every day.</p>
+    </section>
+
+    <!-- CART DRAWER -->
+    <div id="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <span id="close-cart">×</span>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <p>Total Items: <span id="cart-total">0</span></p>
+            <button id="checkout-btn">Checkout (Demo)</button>
+        </div>
+    </div>
+    <div id="cart-overlay"></div>
+
+    <footer>
+        <p>&copy; 2026 The X-Factor | UAE</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

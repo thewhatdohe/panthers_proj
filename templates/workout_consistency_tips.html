@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workout Consistency Tips</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('tips') }}">Back to Tips</a>
+    </nav>
+    <section>
+        <h1>Staying Consistent with Workouts</h1>
+        <p>Consistency is key to achieving your fitness goals. Here are some tips to help you stay on track:</p>
+        <ul>
+            <li>Set realistic and achievable goals.</li>
+            <li>Create a workout schedule and stick to it.</li>
+            <li>Find a workout buddy for accountability.</li>
+            <li>Celebrate small milestones to stay motivated.</li>
+            <li>Mix up your routine to keep it interesting.</li>
+        </ul>
+        <p>Sources:</p>
+        <ul>
+            <li><a href="https://www.verywellfit.com">Verywell Fit</a></li>
+            <li><a href="https://www.self.com">SELF</a></li>
+        </ul>
+    </section>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top, #111 0%, #000 60%);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 2rem;
+        }
+
+        nav {
+            margin-bottom: 2rem;
+        }
+
+        nav a {
+            color: var(--red);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff2a2a;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--muted);
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.7rem;
+        }
+
+        a {
+            color: var(--red);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #ff2a2a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</body>
+</html>

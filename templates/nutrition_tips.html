@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutrition Tips</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('tips') }}">Back to Tips</a>
+    </nav>
+    <section>
+        <h1>5 Tips for Better Nutrition</h1>
+        <p>Eating healthy doesn’t have to be hard. Here are five actionable tips to improve your daily nutrition:</p>
+        <ul>
+            <li>Balance meals with protein, carbs, and healthy fats.</li>
+            <li>Stay hydrated by drinking plenty of water.</li>
+            <li>Track your macros to ensure proper intake.</li>
+            <li>Include fiber-rich foods in your diet.</li>
+            <li>Reduce processed sugar consumption.</li>
+        </ul>
+        <p>Sources:</p>
+        <ul>
+            <li><a href="https://www.healthline.com">Healthline</a></li>
+            <li><a href="https://www.nutrition.org">Nutrition.org</a></li>
+        </ul>
+    </section>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top, #111 0%, #000 60%);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 2rem;
+        }
+
+        nav {
+            margin-bottom: 2rem;
+        }
+
+        nav a {
+            color: var(--red);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff2a2a;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--muted);
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.7rem;
+        }
+
+        a {
+            color: var(--red);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #ff2a2a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</body>
+</html>
